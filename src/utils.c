@@ -6,12 +6,12 @@
 #include "utils.h"
 #include "constants.h"
 
-void usageDisplay() {
+void display_usage_info() {
     printf("Usage: cciphr [OPTION] ... TEXT [STRINGS]...\n");
     printf("Try: 'cciphr -h' for more information\n");
 }
 
-void prettyPrint(int start, int len, char **argv, int key) {
+void print_to_console(int start, int len, char **argv, int key) {
     printf("Out: ");
     for (int i = start; i < len; i++) {
         cipher(argv[i], key);
@@ -19,7 +19,7 @@ void prettyPrint(int start, int len, char **argv, int key) {
     printf("\n");
 }
 
-int changeKey(char *value) {
+int change_key(char *value) {
     int len = strlen(value);
     char outstr[MAX_KEY] = "";
 
@@ -30,7 +30,7 @@ int changeKey(char *value) {
             strcat(outstr, str);
         } else {
             printf("cciphr: invalid number after '-k'\n");
-            usageDisplay();
+            display_usage_info();
             return -1;
         }
     }

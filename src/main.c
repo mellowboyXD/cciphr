@@ -1,12 +1,11 @@
 #include <stdio.h>
+#include <stdbool.h>
 
 #include "utils.h"
 
-typedef enum { false, true }bool;
-
 int main(int argc, char **argv) {
     if (argc < 2) {
-        usageDisplay();
+        display_usage_info();
     } else {
         int key = 3;
         int start = 1;
@@ -21,7 +20,7 @@ int main(int argc, char **argv) {
                 switch (flag) {
                     case 'h':
                         // TODO: HELP MENU
-                        usageDisplay();
+                        display_usage_info();
                         return SUCCESS;
                         break;
 
@@ -36,14 +35,14 @@ int main(int argc, char **argv) {
                         break;
 
                     case 'k':
-                        key = changeKey(argv[i + 1]);
+                        key = change_key(argv[i + 1]);
                         if (key == -1) return INVALID_NUM;
                         start += 2;
                         break;
 
                     default:
                         printf("cciphr: invalid option '-%c'\n", flag);
-                        usageDisplay();
+                        display_usage_info();
                         return INVALID_OPT;
                 }
             } else {
@@ -56,7 +55,7 @@ int main(int argc, char **argv) {
             printf("Error! Expected arguments\n");
             return INVALID_OPT;
         }
-        prettyPrint(start, argc, argv, key);
+        print_to_console(start, argc, argv, key);
     }
 
     return SUCCESS;

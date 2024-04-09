@@ -1,16 +1,16 @@
 #ifndef UTILS_H_
 #define UTILS_H_
 
-enum Errors {
+enum errors {
     SUCCESS,
     INVALID_OPT,
     INVALID_NUM
 };
 
-void usageDisplay();
+void display_usage_info();
 
-void prettyPrint(int start, int len, char **argv, int key);
+void print_to_console(int start, int len, char **argv, int key);
 
-int changeKey(char *value);
+int change_key(char *value);
 
 #endif
