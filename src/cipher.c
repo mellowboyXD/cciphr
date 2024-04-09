@@ -5,6 +5,14 @@
 #include "cipher.h"
 #include "constants.h"
 
+/*
+ * function: cipher
+ * converts the plain text into encrypted text and outputs it to the screen
+ *
+ * param: instring(str) the text input to be encrypted, 
+ *        key(int) the key with which to encrypted
+ * return: void
+*/
 void cipher(char *instring, int key) {
     int len = strlen(instring);
     char outstring[MAX_STR] = "";
@@ -12,7 +20,7 @@ void cipher(char *instring, int key) {
     for (int i = 0; i < len; i++) {
         char chr = instring[i];
 
-        if ((toupper(chr) >= 'A') && (toupper(chr) <= 'Z')) {
+        if ((toupper(chr) >= LOWER_BOUND) && (toupper(chr) <= UPPER_BOUND)) {
             char mod;
             if (islower(chr)) {
                 int x = (chr - A_LOWER) - key;

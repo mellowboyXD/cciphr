@@ -6,11 +6,24 @@
 #include "utils.h"
 #include "constants.h"
 
+/*
+ * function: print_usage_info
+ * prints info on how to use the tool to the console
+*/
 void print_usage_info() {
     printf("Usage: cciphr [OPTION] ... TEXT...\n");
     printf("Try: 'cciphr -h' for more information\n");
 }
 
+/*
+ * function: print_to_console
+ * prints the output after encryption to the console 
+ *
+ * param: start(int) the start index, 
+ *        len(int) the max length of the string to encrypt, 
+ *        argv(str) the string, key(int) the key
+ * return: void
+*/
 void print_to_console(int start, int len, char **argv, int key) {
     printf("Out: ");
     for (int i = start; i < len; i++) {
@@ -19,6 +32,10 @@ void print_to_console(int start, int len, char **argv, int key) {
     printf("\n");
 }
 
+/*
+ * function: print_help_menu
+ * prints the help menu to the console 
+*/
 void print_help_menu() {
     printf( "Usage: cciphr [OPTION] ... TEXT...\n"
             "Encrypts or decrypts a piece of text using Julius Ceasar's popular cipher algorithm\n"
@@ -34,6 +51,14 @@ void print_help_menu() {
     );
 }
 
+/* function: change_key
+ *
+ * converts the string input into a valid encryption key
+ *
+ * param: value(str)  - The string to be encrypted
+ * return: -1(int) if key is not an integer or key is not in range
+ * return: key(int) the value converted to integer
+*/
 int change_key(char *value) {
     int len = strlen(value);
     char outstr[MAX_KEY] = "";

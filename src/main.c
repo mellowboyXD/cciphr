@@ -19,7 +19,6 @@ int main(int argc, char **argv) {
                 int flag = arg[1];
                 switch (flag) {
                     case 'h':
-                        // TODO: HELP MENU
                         print_help_menu();
                         return SUCCESS;
                         break;
@@ -36,7 +35,7 @@ int main(int argc, char **argv) {
 
                     case 'k':
                         key = change_key(argv[i + 1]);
-                        if (key == -1) return INVALID_NUM;
+                        if (key == -1) return INVALID_NUM; // checks if key is valid
                         start += 2;
                         break;
 
