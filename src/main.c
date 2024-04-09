@@ -5,7 +5,7 @@
 
 int main(int argc, char **argv) {
     if (argc < 2) {
-        display_usage_info();
+        print_usage_info();
     } else {
         int key = 3;
         int start = 1;
@@ -20,7 +20,7 @@ int main(int argc, char **argv) {
                 switch (flag) {
                     case 'h':
                         // TODO: HELP MENU
-                        display_usage_info();
+                        print_help_menu();
                         return SUCCESS;
                         break;
 
@@ -42,7 +42,7 @@ int main(int argc, char **argv) {
 
                     default:
                         printf("cciphr: invalid option '-%c'\n", flag);
-                        display_usage_info();
+                        print_usage_info();
                         return INVALID_OPT;
                 }
             } else {
