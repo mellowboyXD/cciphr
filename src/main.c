@@ -17,7 +17,6 @@ int main(int argc, char **argv) {
         for (int i = 1; i < argc; i++) {
             char *arg = argv[i];
             if (arg[0] == KEY_SEP) {
-                // printf("flag\n");
                 int flag = arg[1];
                 switch (flag) {
                     case 'h':

@@ -25,7 +25,6 @@ void print_usage_info() {
  * return: void
 */
 void print_to_console(int start, int len, char **argv, int key) {
-    printf("Out: ");
     for (int i = start; i < len; i++) {
         cipher(argv[i], key);
     }
@@ -72,7 +71,7 @@ int convert_key_to_int(char *value) {
             char str[2] = {chr, '\0'};
             strcat(outstr, str);
         } else {
-            printf("cciphr: invalid number after '-k'\n");
+            printf("cciphr: invalid argument after '-k'\n");
             print_usage_info();
             return -1;
         }
