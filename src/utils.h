@@ -11,7 +11,7 @@ void print_usage_info();
 
 void print_to_console(int start, int len, char **argv, int key);
 
-int change_key(char *value);
+int convert_key_to_int(char *value);
 
 void print_help_menu();
 

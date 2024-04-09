@@ -60,9 +60,11 @@ void print_help_menu() {
  * return: -1(int) if key is not an integer or key is not in range
  * return: key(int) the value converted to integer
 */
-int change_key(char *value) {
+int convert_key_to_int(char *value) {
     int len = strlen(value);
     char outstr[MAX_KEY] = "";
+
+    if (len < 1) return -1;
 
     for (int i = 0; i < len; i++) {
         char chr = value[i];

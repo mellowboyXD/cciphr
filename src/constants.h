@@ -8,4 +8,6 @@
 #define UPPER_BOUND 90  // 'Z'
 #define LOWER_BOUND 65  // 'A'
 
+#define KEY_SEP '-'
+
 #endif
