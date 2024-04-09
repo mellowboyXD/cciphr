@@ -47,6 +47,7 @@ void print_help_menu() {
             "  -k\tChange the key(default=3)\n"
             "  -d\tDecrypt the text\n"
             "\n"
+            "For more information on Ceasar's Cipher, visit <https://en.wikipedia.org/wiki/Caesar_cipher>\n"
             "Note: This is a toy project by @mellowboyXD\n"
     );
 }

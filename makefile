@@ -6,3 +6,6 @@ build: src/main.c src/cipher.c src/utils.c
 
 clean: out/cipher.o out/utils.o out/main.o 
 	rm out/cipher.o out/utils.o out/main.o
+
+clean-all: bin/cciphr out/cipher.o out/utils.o out/main.o 
+	rm out/cipher.o out/utils.o out/main.o bin/cciphr
